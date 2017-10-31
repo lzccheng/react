@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React DEOM install</title>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      const cheng = ['lzc','zhongfangwei','chenggui'];
+      ReactDOM.render(
+        <h1>{cheng.map(function(ele){
+            alert(123);
+            return <h2>ahello!{ele}</h2>;
+          })}</h1>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

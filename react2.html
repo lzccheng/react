@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="box">
+      <script type="text/babel">
+        var Lzc = React.createClass({
+          submit(e){
+            e.preventDefault();
+            console.log(e.target.innerHTML);
+            var helloTo
+          },
+          render(){
+            return <form onSubmit={this.submit}>
+                <p>name:<input type='text' /></p>
+                <p><input type='submit' value='submit'></p>
+            </form>
+          }
+        })
+
+        ReactDOM.render(<Lzc />,document.getElementById('box'))
+      </script>
+    </div>
+  </body>
+</html>

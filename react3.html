@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div id="cc">
+
+    </div>
+
+    <script type="text/babel">
+      var Lpp = React.createClass({
+        getDefaultProps(){
+          console.log('DefaultProps');
+          return {lzc:132231}
+        },
+        getInitialState(){
+          console.log('GetInitialstate');
+          return {cheng:666666666666666666}
+        },
+        constructoeer(){
+          console.log('construtor');
+        },
+        componentWillMount(){
+          console.log('WillMount');
+        },
+        componentDidMount(){
+          console.log(new String());
+          console.log('DidMount');
+        },
+        render(){
+          console.log('render');
+          return <p>
+            {this.props.lzc}
+          <p>{this.state.cheng}</p>
+          </p>
+        }
+      })
+       ReactDOM.render(<Lpp/> ,document.getElementById('cc'))
+    </script>
+  </body>
+</html>

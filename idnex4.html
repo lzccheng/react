@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React DEOM install</title>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Htt = React.createClass({
+        getDefaultProps:function(){
+          return {title:'cheng'};
+        },
+        render:function(){
+          return <h2> hello! {this.props.className} and  age:{this.props.htmlFor} props:{this.props.title}</h2>
+        }
+      });
+      ReactDOM.render(
+        <h1><Htt className='lzc' htmlFor='123784564546546' aaa/>
+96999
+        </h1>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div id="box">
+      <script type="text/babel">
+        var Box = React.createClass({
+          submit(e){
+            e.preventDefault();
+            var userName = ReactDOM.findDOMNode(this.refs.userName).value;
+            var passWord = ReactDOM.findDOMNode(this.refs.passWord).value;
+            if(!userName) {return alert('userName 不能为空！');};
+            if(!passWord) {return alert('passWord 不能为空！');};
+            return alert('成功！');
+          },
+          render(){
+            return <form onSubmit={this.submit}>
+                <p>userName:<input type='text' ref='userName' name='userName'/></p>
+                <p>passWord:<input type='password' ref='passWord' name='passWord'/></p>
+                <p><input type='submit' value='submit'/></p>
+            </form>
+          }
+        });
+
+        ReactDOM.render(<Box />,document.getElementById('box'));
+      </script>
+    </div>
+    <hr />
+    <div id="box2">
+      <script type="text/babel">
+
+        var Chh = React.createClass({
+          getInitialState(){
+            return {num:0};
+          },
+          click(){
+            this.setState({num:this.state.num+1})
+          },
+          dbclick(){
+            this.setState({num:this.state.num+2})
+          },
+          render(){
+            return <div  style={{backgroundColor:'orange',width:'200px',height:'200px',textAlign:'center'}}>
+                  <span style={{backgroundColor:'blue',color:'#fff',fontSize:'50px',display:'inline-block',margin:'0 auto',padding:'10px 20px'}}>{this.state.num}</span>
+                  <p><button style={{cursor:'pointer'}} onClick={this.click}>click me +1</button></p>
+                  <p><button style={{cursor:'pointer'}} onDoubleClick={this.dbclick}>doubleclick me +2</button></p>
+            </div>
+          }
+        });
+
+        ReactDOM.render(<Chh />,document.getElementById('box2'))
+      </script>
+    </div>
+    <hr />
+    <div id="box3">
+      <script type="text/babel">
+
+        var ClickButton = React.createClass({
+          render(){
+            return <p><button style={{cursor:'pointer'}} onClick={this.props.click}>click me +1</button></p>
+          }
+        });
+
+        var DbClickButton = React.createClass({
+          render(){
+            return <p><button style={{cursor:'pointer'}} onDoubleClick={this.props.dbclick}>doubleclick me +2</button></p>
+          }
+        });
+
+        var Chh = React.createClass({
+          getInitialState(){
+            return {num:0};
+          },
+          click(){
+
+            this.setState({num:this.state.num+1})
+          },
+          dbclick(){
+            this.setState({num:this.state.num+2})
+          },
+          render(){
+            return <div  style={{backgroundColor:'orange',width:'200px',height:'200px',textAlign:'center'}}>
+                  <span style={{backgroundColor:'blue',color:'#fff',fontSize:'50px',display:'inline-block',margin:'0 auto',padding:'10px 20px'}}>{this.state.num}</span>
+                  <ClickButton click={this.click}/>
+                  <DbClickButton dbclick={this.dbclick}/>
+            </div>
+          }
+        });
+
+        ReactDOM.render(<Chh />,document.getElementById('box3'))
+      </script>
+    </div>
+  </body>
+</html>

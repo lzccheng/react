@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome-animation/0.0.10/font-awesome-animation.min.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div >
+      <p><i class="fa fa-comments fa-large faa-shake animated" style="color:teal"></i> icon-camera-retro</p>
+    </div>
+    <p><button type="button" name="button" id="btn">click me</button></p>
+    <script type="text/javascript">
+
+      function fn(){
+        this.a = 123456789;
+        console.log(123,this);
+      };
+      // console.log(fn);
+      btn.onclick = function(){
+        // fn();
+        // var This = this;
+        // console.log(132,This);
+        // fn.bind(this)();
+        // fn();
+        fn.bind(this)();
+        // fn().bind(this)
+      }
+      fn()
+      fn.bind(btn);
+      fn()
+      fn.call(btn)
+      fn()
+
+    </script>
+  </body>
+</html>

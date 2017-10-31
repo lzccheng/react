@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="box">
+
+
+      <script type="text/babel">
+        // var Button = ReactBootstrap.Button({
+        //       bsStyle: "success",
+        //       bsSize: "large",
+        //       children: "Register"
+        //     });
+        var Father = React.createClass({
+          render(){
+            return <div>
+              <Button bsStyle="primary" onClick={this.props.fn}>
+              点我
+              </Button>
+              <p>{this.props.va}</p>
+            </div>
+          }
+        });
+        var Lcc = React.createClass({
+          getInitialState(){
+            return {value:'Welcome to H5!',state:false};
+          },
+          click(e){
+            if(this.state.state){
+              this.state.value = 1;
+            }else {
+              this.state.value = 2;
+            }
+            this.state.x = e.clientX;
+            this.state.y = e.clientY;
+            this.setState({state:!this.state.state})
+          },
+          render(){
+            console.log(this);
+            console.log(this.state);
+            var value = this.state.value;
+            return (<p>
+                <div onMouseMove={this.click} style={{height:'300px',backgroundColor:'teal'}}>
+
+                </div>
+                <p>{this.state.x+'-----'+this.state.y}</p>
+                <button onClick={this.click}>dianjji</button>
+                <h4>{value}</h4>
+                <Father  fn={this.click} va={value}/>
+              </p>);
+          }
+        });
+
+        ReactDOM.render(<Lcc />,document.getElementById('box'));
+      </script>
+    </div>
+  </body>
+</html>

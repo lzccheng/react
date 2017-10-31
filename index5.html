@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React DEOM install</title>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style media="screen">
+      .red{color:green}
+    </style>
+  </head>
+  <body>
+      <div id="example">
+          <script type="text/babel">
+              var LikeButton = React.createClass({
+                  getInitialState(){
+                      console.log(789,this);
+                      return {liked: false,lzc:123};
+                  },
+                  k(eve){
+                    console.log(33333333,eve);
+                    console.log(222222222222,eve.target);
+                    console.log(44444444,eve.target.innerHTML);
+                    console.log(55555555555,this);
+                      this.setState({llllzc:123456});
+                  },
+                  render(){
+                      var text = this.state.liked ? 'like' : 'haven\'t liked';
+                      console.log(369,this);
+                      console.log(this.state.lzc);
+                      return(
+                          <p onClick={this.k}>
+                              You {text} this. k to toggle.+{this.state.lzc}
+                          </p>
+                      );
+                  }
+                  // getInitialStae:function (){
+                  //   return {lzc:''}
+                  // },
+                  // change:function (eve){
+                  //   console.log(eve.target.value);
+                  //   // this.setState({lzc:eve.target.value});
+                  // },
+                  // render:function (){
+                  //   return (
+                  //     <input type='text' onChange = {this.cheng}>
+                  //     <p>{this.state.lzc}</p>
+                  //   )
+                  // }
+              });
+              ReactDOM.render(
+                  <LikeButton />,
+                  document.getElementById('example')
+              );
+          </script>
+      </div>
+      <p id='p'>
+        <script type="text/babel">
+
+
+          var LLc = React.createClass({
+            getInitialState(){
+              return {llzc:456}
+            },
+            ch(eve){
+              this.setState({llzc:eve.target.value})
+            },
+            render(){
+              console.log(46);
+              return (<div><p>p:{this.state.llzc}</p><input type='text' value={this.state.llzc} onChange={this.ch}/></div>
+            );
+            }
+          })
+          ReactDOM.render(<LLc />,document.getElementById('p'))
+
+
+        </script>
+      </p>
+
+      <div id="div">
+
+        <script type="text/babel">
+          var Laas = React.createClass({
+            getInitialState(){
+              console.log(this);
+              return {name:'a',pass:'a'}
+            },
+            change(eve){
+              this.setState({name:eve.target.value})
+            },
+            passchange(eve){
+              this.setState({pass:eve.target.value})
+            },
+            render(){
+              return (<div><p>{this.state.name}</p>
+                  <p>{this.state.pass}</p>
+                  <input type='text' value={this.state.name} onChange={this.change}/><i className="fa fa-check-square red" aria-hidden='false'></i><br/><br/>
+                  <input type='text' value={this.state.pass} onChange={this.passchange}/>
+                </div>)
+            }
+          })
+
+          ReactDOM.render(<Laas  />,document.getElementById('div'))
+        </script>
+
+      </div>
+  </body>
+  </html>
